@@ -383,7 +383,7 @@ ViewManager::next()
             UPDATE_BUTTON_PROPERTY( backEnabled, false );
         }
         updateCancelEnabled( !settings->disableCancel() && !( executing && settings->disableCancelDuringExec() ) );
-        updateBackAndNextVisibility( !( executing && settings->hideBackAndNextDuringExec() ) );
+        updateBackAndNextVisibility( !( executing && settings->hideBackAndNextDuringExec() ) && !isAtVeryEnd( m_steps , m_currentStep ) );
     }
     else
     {
